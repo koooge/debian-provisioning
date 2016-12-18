@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
 
@@ -20,6 +20,7 @@ install_ruby_build() {
 
 install_ruby() {
   rbenv install 2.3.3
+  rbenv global 2.3.3
 }
 
 install_rbenv
