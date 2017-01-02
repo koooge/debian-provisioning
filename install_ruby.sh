@@ -6,8 +6,7 @@ sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
 
 install_rbenv() {
   git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-  pushd ~/.rbenv && src/configure && make -C src
-  popd
+  cd ~/.rbenv && src/configure && make -C src && cd -
   echo '' >> ~/.bash_profile
   echo '# ruby' >> ~/.bash_profile
   echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
