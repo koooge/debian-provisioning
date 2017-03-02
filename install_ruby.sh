@@ -20,8 +20,9 @@ install_ruby_build() {
 }
 
 install_ruby() {
-  rbenv install 2.3.3
-  rbenv global 2.3.3
+  rbenv install 2.4.0
+  rbenv local 2.4.0
+  rbenv global 2.4.0
 }
 
 install_rbenv
