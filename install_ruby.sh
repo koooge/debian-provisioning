@@ -12,7 +12,6 @@ install_rbenv() {
   echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
   ~/.rbenv/bin/rbenv init
   echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-#  source ~/.bash_profile
 }
 
 install_ruby_build() {
@@ -23,6 +22,7 @@ install_ruby() {
   rbenv install 2.4.0
   rbenv local 2.4.0
   rbenv global 2.4.0
+  rbenv rehash
 }
 
 install_rbenv
