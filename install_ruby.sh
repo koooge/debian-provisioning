@@ -2,7 +2,7 @@
 
 RUBY_VERSION=2.4.0
 
-shopt -s expad_aliases
+# shopt -s expand_aliases
 
 sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
 
