@@ -28,6 +28,9 @@ install_ruby() {
   rbenv local ${RUBY_VERSION}
   rbenv global ${RUBY_VERSION}
   rbenv rehash
+
+  gem update --system
+  gem install bundler --no-document
 }
 
 install_rbenv
