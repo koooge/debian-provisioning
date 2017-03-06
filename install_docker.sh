@@ -16,6 +16,9 @@ install_docker() {
   apt-get update
   apt-get install -y docker-ce
   systemctl start docker
+
+  gpasswd -a ${USER} docker
+  systemctl restart docker
 }
 
 ## dockere-compose
