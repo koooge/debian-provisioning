@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# cf. https://www.linkedin.com/pulse/installing-openjdk-8-tomcat-debian-jessie-iga-made-muliarsa
+# Usage: `sudo ./install_java.sh`
 
-# java
 install_java() {
-  sudo sh -c "echo 'deb http://ftp.de.debian.org/debian jessie-backports main' >> /etc/apt/sources.list.d/java.list"
-  sudo apt-get update
-  sudo apt-get install -y openjdk-8-jdk
+  echo "deb http://ftp.jp.debian.org/debian/ jessie-backports main" >> /etc/apt/sources.list
+  apt-get update
+  apt install -t jessie-backports  openjdk-8-jre-headless ca-certificates-java
+  apt-get install -y openjdk-8-jdk
 }
 
 install_java
