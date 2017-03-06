@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Usage: `sudo ./install_docker.sh`
+
 ## docker
 install_docker() {
   apt-get update
@@ -11,14 +13,14 @@ install_docker() {
   apt-get install -y docker-engine
   service docker start
 
-  ### sudo groupadd docker
   gpasswd -a ${USER} docker
   service docker restart
 }
 
 ## dockere-compose
 install_docker_compose() {
-  curl -L "https://github.com/docker/compose/releases/download/1.9.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  COMPOSE_VER=1.11.2
+  curl -L "https://github.com/docker/compose/releases/download/${COMPOSE_VER}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
   chmod +x /usr/local/bin/docker-compose
 }
 
