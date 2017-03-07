@@ -10,8 +10,10 @@ apt-get install -y git tmux curl tree
 ## dotfiles
 curl -L raw.github.com/koooge/dotfiles/master/install.sh | bash
 
-## alias
-alias ll='ls -l'
+## aliases
+echo "" >> ~/.bash_profile
+echo "## aliases" >> ~/.bash_profile
+echo "alias ll='ls -l'" >> ~/.bash_profile
 
 ## docker
 ## node
