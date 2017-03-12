@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Usage: `sudo ./debian.h`
+# Usage: `./debian.h`
 
 ## packages
-apt-get update
-apt-get -y upgrade
-apt-get install -y git tmux curl unzip \
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get install -y git tmux curl unzip \
     tree jq
 
 ## dotfiles
