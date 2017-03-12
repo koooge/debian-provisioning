@@ -5,7 +5,7 @@
 ## packages
 sudo apt-get update
 sudo apt-get -y upgrade
-sudo apt-get install -y git tmux curl unzip \
+sudo apt-get install -y git tmux curl zip unzip \
     tree jq
 
 ## dotfiles
