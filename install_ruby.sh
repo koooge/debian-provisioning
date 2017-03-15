@@ -2,9 +2,6 @@
 
 RUBY_VERSION=2.4.0
 
-# shopt -s expand_aliases
-
-sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
 
 install_rbenv() {
   git clone https://github.com/rbenv/rbenv.git ~/.rbenv
@@ -21,6 +18,7 @@ install_rbenv() {
 
 install_ruby_build() {
   git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+  apt-get install -y libssl-dev libreadline-dev zlib1g-dev
 }
 
 install_ruby() {
@@ -30,7 +28,7 @@ install_ruby() {
   rbenv rehash
 
   gem update --system
-  gem install bundler --no-document
+  gem install bundler pry pry-doc --no-document
 }
 
 install_rbenv
