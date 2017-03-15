@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Usage: `sudo ./debian.h`
+# Usage: `./debian.h`
 
 ## packages
-apt-get update
-apt-get -y upgrade
-apt-get install -y git tmux curl \
+sudo apt-get update
+sudo apt-get -y upgrade
+sudo apt-get install -y git tmux curl zip unzip \
     tree jq
 
 ## dotfiles
@@ -15,8 +15,3 @@ curl -L raw.github.com/koooge/dotfiles/master/install.sh | bash
 echo "" >> ~/.bash_profile
 echo "## aliases" >> ~/.bash_profile
 echo "alias ll='ls -l'" >> ~/.bash_profile
-
-## docker
-## node
-## ruby
-## java
