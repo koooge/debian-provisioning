@@ -19,6 +19,8 @@ install_sdkman
 install_java
 install_maven
 
+source ~/.bashrc
+
 sdk version
 java -version
 mvn -v
