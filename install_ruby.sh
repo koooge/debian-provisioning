@@ -18,7 +18,7 @@ install_rbenv() {
 
 install_ruby_build() {
   git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-  apt-get install -y libssl-dev libreadline-dev zlib1g-dev
+  sudo apt-get install -y libssl-dev libreadline-dev zlib1g-dev
 }
 
 install_ruby() {
