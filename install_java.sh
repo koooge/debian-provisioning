@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: `./install_java.sh`
+# Usage: `./install_java.sh && . ~/.bashrc`
 
 install_sdkman() {
   curl -s "https://get.sdkman.io" | bash
@@ -18,8 +18,6 @@ install_maven() {
 install_sdkman
 install_java
 install_maven
-
-source ~/.bashrc
 
 sdk version
 java -version
