@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: `sudo ./install_docker.sh`
+# Usage: `./install_docker.sh`
 
 ## docker
 install_docker() {
