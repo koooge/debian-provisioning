@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RUBY_VERSION=2.4.0
+RUBY_VERSION=2.4.1
 
 
 install_rbenv() {
