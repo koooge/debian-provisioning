@@ -6,6 +6,7 @@
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get install -y git tmux curl zip unzip \
+    gcc g++ make \
     tree jq \
     vim
 
