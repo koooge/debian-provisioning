@@ -14,6 +14,8 @@ sudo apt-get install -y git tmux curl zip unzip \
 curl -L raw.github.com/koooge/dotfiles/master/install.sh | bash
 
 ## aliases
-echo "" >> ~/.bash_profile
-echo "## aliases" >> ~/.bash_profile
-echo "alias ll='ls -l'" >> ~/.bash_profile
+cat << EOS >> ~/.bash_profile
+
+## aliases
+alias ll='ls -l'
+EOS
