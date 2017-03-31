@@ -4,5 +4,4 @@
 
 curl --create-dirs -o ~/.embulk/bin/embulk -L "https://dl.embulk.org/embulk-latest.jar"
 chmod +x ~/.embulk/bin/embulk
-export PATH="$HOME/.embulk/bin:$PATH"
-echo 'export PATH="$HOME/.embulk/bin:$PATH"' >> ~/.bashrc
+echo 'export PATH="$HOME/.embulk/bin:$PATH"' >> ~/.bash_profile
