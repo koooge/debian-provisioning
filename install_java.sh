@@ -11,14 +11,14 @@ install_java() {
   sdk install java
 }
 
-install_maven() {
-  sdk install maven
+install_build_system() {
+  sdk install gradle
 }
 
 install_sdkman
 install_java
-install_maven
+install_build_system
 
 sdk version
 java -version
-mvn -v
+gradle -v
