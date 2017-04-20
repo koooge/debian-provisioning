@@ -20,7 +20,7 @@ install_golang() {
 go_get_packages() {
   GO_CMD=golang.org/x/tools/cmd
   go get ${GO_CMD}/godoc
-#  go get ${GO_CMD}/goimports
+  go get ${GO_CMD}/goimports
 #  go get ${GO_CMD}/golint
 #  go get ${GO_CMD}/gorename
 #  go get ${GO_CMD}/guru
