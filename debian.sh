@@ -33,6 +33,3 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin
 EOS
 
 export PATH
-
-## aliases
-echo 'alias ll="ls -l"' >> ${HOME}/.bash.d/aliases.sh
