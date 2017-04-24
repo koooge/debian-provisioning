@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: `./install_ruby.sh
+# Usage: `./install_ruby.sh`
 
 RUBY_VERSION=2.4.1
 

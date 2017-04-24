@@ -10,6 +10,14 @@ sudo apt-get install -y git tmux curl zip unzip \
     tree jq \
     vim
 
+## install packages
+./install_ruby.sh
+# ./install_java.sh
+./install_node.sh
+# ./install_golang.sh
+# ./install_docker.sh
+# ./install_embulk.sh
+
 ## dotfiles
 curl -L raw.github.com/koooge/dotfiles/master/install.sh | bash
 
@@ -29,7 +37,7 @@ if [ -d "${HOME}/.bash.d" ] ; then
     unset f
 fi
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin
+PATH=$PATH:${HOME}/.local/bin:${HOME}/bin
 EOS
 
 export PATH
