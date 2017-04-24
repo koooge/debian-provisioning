@@ -1,19 +1,16 @@
 #!/bin/bash
 
-RUBY_VERSION=2.4.1
+# Usage: `./install_ruby.sh
 
+RUBY_VERSION=2.4.1
 
 install_rbenv() {
   git clone https://github.com/rbenv/rbenv.git ~/.rbenv
   cd ~/.rbenv && src/configure && make -C src && cd -
   ~/.rbenv/bin/rbenv init
+  cp ./.bash.d/ruby.sh ${HOME}/.bash.d/
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
-
-  echo '' >> ~/.bash_profile
-  echo '# ruby' >> ~/.bash_profile
-  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
-  echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 }
 
 install_ruby_build() {
