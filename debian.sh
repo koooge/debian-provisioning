@@ -13,9 +13,26 @@ sudo apt-get install -y git tmux curl zip unzip \
 ## dotfiles
 curl -L raw.github.com/koooge/dotfiles/master/install.sh | bash
 
-## aliases
-cat << EOS >> ~/.bash_profile
+## .bash_profile
+mkdir -p ${HOME}/.bash.d
+
+cat << EOS >> ${HOME}/.bash_profile
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+
+# load bash flagment
+if [ -d "${HOME}/.bash.d" ] ; then
+    for f in "${HOME}"/.bash.d/*.sh ; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
+fi
+
+PATH=$PATH:$HOME/.local/bin:$HOME/bin
+EOS
+
+export PATH
 
 ## aliases
-alias ll='ls -l'
-EOS
+echo 'alias ll="ls -l"' >> ${HOME}/.bash.d/aliases.sh
