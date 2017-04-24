@@ -3,18 +3,13 @@
 # Usage `./install_golang.sh && source ~/.profile`
 
 GO_URL=https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz
-GOPATH=$HOME/dev
-
 
 install_golang() {
   wget -O - ${GO_URL} | sudo tar zxC /usr/local
 
+  cp ./.bash.d/go.sh ${HOME}/.bash.d/
   export PATH=$PATH:/usr/local/go/bin
-  export GOPATH=$GOPATH
-  echo >> ~/.profile
-  echo "## Golang settings" >> ~/.profile
-  echo "export GOPATH=$GOPATH" >> ~/.profile
-  echo "export PATH=$PATH:/usr/local/go/bin:${GOPATH}/bin" >> ~/.profile
+  export GOPATH=$HOME/dev
 }
 
 go_get_packages() {
