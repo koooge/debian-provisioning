@@ -33,15 +33,15 @@ mkdir -p ${HOME}/.bash.d
 
 cat << \EOS >> ${HOME}/.bash_profile
 if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
+  . ~/.bashrc
 fi
 
 # load bash flagment
 if [ -d "${HOME}/.bash.d" ] ; then
-    for f in "${HOME}"/.bash.d/*.sh ; do
-        [ -x "$f" ] && . "$f"
-    done
-    unset f
+  for f in ${HOME}/.bash.d/*.sh ; do
+    [ -s "$f" ] && . "$f"
+  done
+  unset f
 fi
 
 PATH=$PATH:${HOME}/.local/bin:${HOME}/bin
