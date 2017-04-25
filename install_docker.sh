@@ -25,9 +25,9 @@ install_docker() {
 
 ## dockere-compose
 install_docker_compose() {
-  curl -L http://github.com/docker/compose/releases/download/${COMPOSE_VER}/docker-compose-`uname -s`-`uname -m` > ~/docker-compose
-  chmod +x /usr/local/bin/docker-compose
-  sudo mv ~/docker-compose /usr/local/bin/
+  curl -L http://github.com/docker/compose/releases/download/${COMPOSE_VER}/docker-compose-`uname -s`-`uname -m` > /tmp/docker-compose
+  chmod +x /tmp/docker-compose
+  sudo mv /tmp/docker-compose /usr/local/bin/
 }
 
 install_docker
