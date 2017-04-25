@@ -3,20 +3,27 @@
 # Usage: `./debian.h`
 
 ## packages
-sudo apt-get update
-sudo apt-get -y upgrade
-sudo apt-get install -y git tmux curl zip unzip \
-    gcc g++ make \
-    tree jq \
-    vim
+install_apt_packages() {
+  sudo apt-get update
+  sudo apt-get -y upgrade
+  sudo apt-get install -y git tmux curl zip unzip \
+      gcc g++ make \
+      tree jq \
+      vim
+}
 
 ## install packages
-./install_ruby.sh
-# ./install_java.sh
-./install_node.sh
-# ./install_golang.sh
-# ./install_docker.sh
-# ./install_embulk.sh
+install_packages() {
+  ./install_ruby.sh
+  # ./install_java.sh
+  ./install_node.sh
+  # ./install_golang.sh
+  # ./install_docker.sh
+  # ./install_embulk.sh
+}
+
+install_apt_packages
+install_packages
 
 ## dotfiles
 curl -L raw.github.com/koooge/dotfiles/master/install.sh | bash
@@ -24,7 +31,7 @@ curl -L raw.github.com/koooge/dotfiles/master/install.sh | bash
 ## .bash_profile
 mkdir -p ${HOME}/.bash.d
 
-cat << EOS >> ${HOME}/.bash_profile
+cat << \EOS >> ${HOME}/.bash_profile
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
