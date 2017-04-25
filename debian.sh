@@ -18,7 +18,7 @@ install_packages() {
   # ./install_java.sh
   ./install_node.sh
   # ./install_golang.sh
-  # ./install_docker.sh
+  ./install_docker.sh
   # ./install_embulk.sh
 }
 
