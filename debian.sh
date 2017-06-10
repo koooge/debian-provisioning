@@ -8,7 +8,7 @@ install_apt_packages() {
   sudo apt-get -y upgrade
   sudo apt-get install -y git tmux curl zip unzip \
       gcc g++ make \
-      global tree jq dos2unix \
+      global tig tree jq dos2unix \
       vim
 }
 
