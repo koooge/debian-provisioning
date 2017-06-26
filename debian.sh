@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: `./debian.h`
+# Usage: `./debian.h && . ~/.bash_profile`
 
 ## packages
 install_apt_packages() {
@@ -17,7 +17,7 @@ install_packages() {
   ./install_ruby.sh
   # ./install_java.sh
   ./install_node.sh
-  # ./install_golang.sh
+  ./install_golang.sh
   ./install_docker.sh
   # ./install_embulk.sh
 }
