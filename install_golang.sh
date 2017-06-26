@@ -1,8 +1,10 @@
 #!/bin/bash
 
-# Usage `./install_golang.sh && source ~/.profile`
+# Usage `./install_golang.sh && source ~/.bash_profile`
 
-GO_URL=https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz
+GO_VERSION="1.8.3"
+
+GO_URL=https://storage.googleapis.com/golang/go${GO_VERSION}.linux-amd64.tar.gz
 
 install_golang() {
   wget -O - ${GO_URL} | sudo tar zxC /usr/local
