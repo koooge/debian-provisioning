@@ -28,9 +28,18 @@ install_ruby() {
   gem install bundler pry pry-doc --no-document
 }
 
+install_mruby() {
+  sudo apt-get install -y bison
+  git clone https://github.com/mruby/mruby.git ~/
+  cd ~/mruby
+  ./minirake
+  cd -
+}
+
 install_rbenv
 install_ruby_build
 install_ruby
+# install_mruby
 
 rbenv -v
 ruby -v
