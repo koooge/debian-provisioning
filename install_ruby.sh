@@ -30,8 +30,8 @@ install_ruby() {
 
 install_mruby() {
   sudo apt-get install -y bison
-  git clone https://github.com/mruby/mruby.git ~/
-  cd ~/mruby
+  git clone https://github.com/mruby/mruby.git $HOME/mruby
+  cd $HOME/mruby
   ./minirake
   cd -
 
