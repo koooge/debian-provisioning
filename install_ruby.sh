@@ -34,6 +34,8 @@ install_mruby() {
   cd ~/mruby
   ./minirake
   cd -
+
+  gem install mgem --no-document
 }
 
 install_rbenv
