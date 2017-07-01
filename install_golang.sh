@@ -6,6 +6,9 @@ GO_VERSION="1.8.3"
 
 GO_URL=https://storage.googleapis.com/golang/go${GO_VERSION}.linux-amd64.tar.gz
 
+install_gvm() {
+}
+
 install_golang() {
   wget -O - ${GO_URL} | sudo tar zxC /usr/local
 
@@ -20,6 +23,7 @@ go_get_packages() {
   go get ${GO_CMD}/goimports
 #  go get ${GO_CMD}/gorename
 #  go get ${GO_CMD}/guru
+
   go get github.co/golang/lint/golint
   go get github.com/motemen/gore
   go get github.com/motemen/ghq
@@ -29,8 +33,11 @@ go_get_packages() {
   go get github.com/k0kubun/pp
 #  go get github.com/Masterminds/glide
 #  go get github.com/pilu/fresh
+  go get github.com/peco/peco/cmd/peco
+  go get github.com/github/hub
 }
 
+# install_gvm
 install_golang
 go_get_packages
 
