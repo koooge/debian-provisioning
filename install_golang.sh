@@ -18,16 +18,17 @@ go_get_packages() {
   GO_CMD=golang.org/x/tools/cmd
   go get ${GO_CMD}/godoc
   go get ${GO_CMD}/goimports
-#  go get ${GO_CMD}/golint
 #  go get ${GO_CMD}/gorename
 #  go get ${GO_CMD}/guru
-#  go get github.com/motemen/gore
-#  go get github.com/motemen/ghq
-#  go get github.com/nsf/gocode
-#  go get github.com/rogpeppe/godef
+  go get github.co/golang/lint/golint
+  go get github.com/motemen/gore
+  go get github.com/motemen/ghq
+  go get github.com/nsf/gocode
+  go get github.com/rogpeppe/godef
 #  go get github.com/jstemmer/gotags
-#  go get github.com/k0kubun/pp
+  go get github.com/k0kubun/pp
 #  go get github.com/Masterminds/glide
+#  go get github.com/pilu/fresh
 }
 
 install_golang
