@@ -7,6 +7,7 @@ GO_VERSION="1.8.3"
 GO_URL=https://storage.googleapis.com/golang/go${GO_VERSION}.linux-amd64.tar.gz
 
 install_gvm() {
+  echo ""
 }
 
 install_golang() {
@@ -14,7 +15,7 @@ install_golang() {
 
   cp ./.bash.d/go.sh ${HOME}/.bash.d/
   export PATH=$PATH:/usr/local/go/bin
-  export GOPATH=$HOME/dev
+  export GOPATH=$HOME/go
 }
 
 go_get_packages() {
@@ -24,7 +25,7 @@ go_get_packages() {
 #  go get ${GO_CMD}/gorename
 #  go get ${GO_CMD}/guru
 
-  go get github.co/golang/lint/golint
+  go get github.com/golang/lint/golint
   go get github.com/motemen/gore
   go get github.com/motemen/ghq
   go get github.com/nsf/gocode
