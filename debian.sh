@@ -4,6 +4,7 @@
 
 ## packages
 install_apt_packages() {
+  echo "set grub-pc/install_devices /dev/sda" | sudo debconf-communicate
   sudo apt-get update
   sudo apt-get -y upgrade
   sudo apt-get install -y git tmux curl zip unzip \
