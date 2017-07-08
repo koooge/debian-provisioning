@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Usage: `./debian.h && . ~/.bash_profile`
+# Usage: `./debian.sh && . ~/.bash_profile`
 
 ## packages
 install_apt_packages() {
