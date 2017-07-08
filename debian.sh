@@ -2,6 +2,8 @@
 
 # Usage: `./debian.sh && . ~/.bash_profile`
 
+set -eu
+
 ## packages
 install_apt_packages() {
   echo "set grub-pc/install_devices /dev/sda" | sudo debconf-communicate
@@ -16,42 +18,42 @@ install_apt_packages() {
 ## install packages
 install_packages() {
   ./install_ruby.sh
-  # ./install_java.sh
   ./install_node.sh
   ./install_golang.sh
+  ./install_java.sh
   ./install_docker.sh
-  # ./install_embulk.sh
 }
+
+install_bash_profile() {
+  ## .bash_profile
+  mkdir -p ${HOME}/.bash.d
+
+  cat << \EOS >> ${HOME}/.bash_profile
+  if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+  fi
+
+  # load bash flagment
+  if [ -d "${HOME}/.bash.d" ] ; then
+    for f in ${HOME}/.bash.d/*.sh ; do
+      [ -s "$f" ] && . "$f"
+    done
+    unset f
+  fi
+
+  PATH=$PATH:${HOME}/.local/bin:${HOME}/bin
+
+  # prompt
+  git_branch() {
+    echo $(git branch 2> /dev/null | sed -n 's/^\* \(.*\)$/(\1)/p')
+  }
+  PS1='\033[01;34m\]$(git_branch)\[\033[00m\]:\w\n\$ '
+EOS
+}
+
+# dotfiles 
+install_bash_profile
+curl -L raw.github.com/koooge/dotfiles/master/install.sh | bash
 
 install_apt_packages
 install_packages
-
-## dotfiles
-curl -L raw.github.com/koooge/dotfiles/master/install.sh | bash
-
-## .bash_profile
-mkdir -p ${HOME}/.bash.d
-
-cat << \EOS >> ${HOME}/.bash_profile
-if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
-fi
-
-# load bash flagment
-if [ -d "${HOME}/.bash.d" ] ; then
-  for f in ${HOME}/.bash.d/*.sh ; do
-    [ -s "$f" ] && . "$f"
-  done
-  unset f
-fi
-
-PATH=$PATH:${HOME}/.local/bin:${HOME}/bin
-
-# prompt
-git_branch() {
-  echo $(git branch 2> /dev/null | sed -n 's/^\* \(.*\)$/(\1)/p')
-}
-PS1='\033[01;34m\]$(git_branch)\[\033[00m\]:\w\n\$ '
-EOS
-
-export PATH
