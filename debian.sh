@@ -25,29 +25,15 @@ install_packages() {
 }
 
 install_bash_profile() {
-  ## .bash_profile
   mkdir -p ${HOME}/.bash.d
+  cp .bash_profile ${HOME}/
 
   cat << \EOS >> ${HOME}/.bash_profile
-  if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-  fi
-
-  # load bash flagment
-  if [ -d "${HOME}/.bash.d" ] ; then
-    for f in ${HOME}/.bash.d/*.sh ; do
-      [ -s "$f" ] && . "$f"
-    done
-    unset f
-  fi
-
-  PATH=$PATH:${HOME}/.local/bin:${HOME}/bin
-
-  # prompt
-  git_branch() {
-    echo $(git branch 2> /dev/null | sed -n 's/^\* \(.*\)$/(\1)/p')
-  }
-  PS1='\033[01;34m\]$(git_branch)\[\033[00m\]:\w\n\$ '
+# prompt
+git_branch() {
+  echo $(git branch 2> /dev/null | sed -n 's/^\* \(.*\)$/(\1)/p')
+}
+PS1='\033[01;34m\]$(git_branch)\[\033[00m\]:\w\n\$ '
 EOS
 }
 
