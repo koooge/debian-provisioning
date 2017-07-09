@@ -8,6 +8,7 @@ install_rbenv() {
   git clone https://github.com/rbenv/rbenv.git ~/.rbenv
   cd ~/.rbenv && src/configure && make -C src && cd -
   ~/.rbenv/bin/rbenv init
+  mkdir -p ${HOME}/.bash.d
   cp ./.bash.d/ruby.sh ${HOME}/.bash.d/
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
