@@ -7,7 +7,7 @@ set -eu
 ## packages
 install_apt_packages() {
   echo "set grub-pc/install_devices /dev/sda" | sudo debconf-communicate
-  sudo apt-get update
+  sudo apt-get -qq update
   sudo apt-get -y upgrade
   sudo apt-get install -y git tmux curl zip unzip \
       gcc g++ make \
@@ -37,9 +37,8 @@ PS1='\033[01;34m\]$(git_branch)\[\033[00m\]:\w\n\$ '
 EOS
 }
 
-# dotfiles 
+install_apt_packages
 install_bash_profile
 curl -L raw.github.com/koooge/dotfiles/master/install.sh | bash
 
-install_apt_packages
 install_packages
