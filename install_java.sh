@@ -19,6 +19,7 @@ install_sdkman
 install_java
 install_build_system
 
+source ${HOME}/.bash_profile
 sdk version
 java -version
 gradle -v
