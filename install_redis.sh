@@ -10,4 +10,5 @@ cd redis-${REDIS_VERSION}
 make
 
 cd -
+mv redis-${REDIS_VERSION} ${HOME}/
 rm redis-${REDIS_VERSION}.tar.gz
