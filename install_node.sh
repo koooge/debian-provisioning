@@ -4,7 +4,7 @@
 
 shopt -s expand_aliases
 
-NVM_VERSION="v0.33.2"
+NVM_VERSION="v0.33.6"
 NODE_VERSION="lts/boron"
 
 install_nvm() {
